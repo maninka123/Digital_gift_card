@@ -223,9 +223,9 @@ h2 {
 
 .photo-stack {
   position: relative;
-  min-height: 385px;
+  min-height: 335px;
   display: block;
-  padding: 0.3rem 0.1rem 2rem 0.4rem;
+  padding: 0.4rem 0.1rem 2rem 0.3rem;
 }
 
 .photo-frame {
@@ -246,19 +246,19 @@ h2 {
 }
 
 .photo-frame-large {
-  top: 0.4rem;
-  left: 1.1rem;
-  width: min(330px, 74%);
-  height: 190px;
-  transform: rotate(-2deg);
+  top: 0.8rem;
+  left: 0.8rem;
+  width: min(315px, 70%);
+  height: 180px;
+  transform: rotate(-2.2deg);
   z-index: 3;
 }
 
 .photo-frame-wide {
-  top: 11.4rem;
-  right: 0.2rem;
-  width: min(295px, 66%);
-  height: 182px;
+  top: 8.5rem;
+  right: 0.8rem;
+  width: min(315px, 70%);
+  height: 180px;
   transform: rotate(2deg);
   z-index: 2;
 }
@@ -274,10 +274,10 @@ h2 {
 
 .postmark {
   position: absolute;
-  right: -0.2rem;
-  bottom: 0.4rem;
-  width: 160px;
-  height: 160px;
+  right: -0.1rem;
+  bottom: 0.1rem;
+  width: 150px;
+  height: 150px;
   display: grid;
   place-items: center;
   border: 3px dashed rgba(135, 56, 56, 0.72);
@@ -317,11 +317,12 @@ h2 {
 }
 
 .memory-strip {
-  margin: -0.6rem clamp(1rem, 3vw, 2rem) 0;
-  padding: 1.2rem 1.5rem;
+  margin: 1rem clamp(1rem, 3vw, 2rem) 0;
+  padding: 1.45rem 1.7rem;
   border-radius: 22px;
   background: linear-gradient(90deg, rgba(184, 87, 86, 0.16), rgba(191, 127, 47, 0.14));
-  border: 1px solid rgba(94, 65, 58, 0.12);
+  border: 1px solid rgba(94, 65, 58, 0.08);
+  box-shadow: 0 14px 28px rgba(53, 28, 23, 0.05);
 }
 
 .memory-strip p {
@@ -336,20 +337,20 @@ h2 {
 }
 
 .mini-memory {
-  padding: 0 2rem 0.5rem;
+  padding: 1rem 2rem 0.7rem;
 }
 
 .film-card {
-  padding: 1rem;
+  padding: 1.15rem;
   border-radius: 26px;
   background: linear-gradient(180deg, rgba(255, 249, 241, 0.92), rgba(239, 223, 206, 0.95));
-  border: 1px solid rgba(94, 65, 58, 0.12);
-  box-shadow: 0 16px 34px rgba(53, 28, 23, 0.08);
+  border: 1px solid rgba(94, 65, 58, 0.08);
+  box-shadow: 0 16px 34px rgba(53, 28, 23, 0.06);
 }
 
 .film-label {
   display: inline-block;
-  margin-bottom: 0.85rem;
+  margin-bottom: 1rem;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -436,7 +437,7 @@ h2 {
   border-radius: 18px;
   color: var(--muted);
   background: rgba(255, 252, 247, 0.76);
-  border: 1px dashed rgba(184, 87, 86, 0.24);
+  border: 1px dashed rgba(184, 87, 86, 0.16);
   font-family: "Fraunces", serif;
   font-size: 1.05rem;
   line-height: 1.4;
@@ -653,7 +654,7 @@ h2 {
   }
 
   .memory-strip {
-    margin-top: 0.6rem;
+    margin-top: 1rem;
   }
 
   .film-strip {
@@ -692,9 +693,9 @@ h2 {
 
   .photo-frame-wide {
     right: 0.1rem;
-    top: 10.8rem;
-    width: min(82%, 275px);
-    height: 165px;
+    top: 8.8rem;
+    width: min(84%, 280px);
+    height: 160px;
     transform: rotate(2deg);
   }
 
@@ -720,7 +721,7 @@ h2 {
   }
 
   .mini-memory {
-    padding: 0 1rem 0.5rem;
+    padding: 0.9rem 1rem 0.6rem;
   }
 
   .footer-ribbon {

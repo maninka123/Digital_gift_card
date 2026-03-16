@@ -11,7 +11,7 @@ This is a static farewell card for Yaling Xu. It is ready to open locally and re
 - `index.html`: page content
 - `styles.css`: design and layout
 - `script.js`: small reveal animation
-- `Images/`: the two photos used in the card
+- `Images/`: photos used in the card
 
 ## Local preview
 

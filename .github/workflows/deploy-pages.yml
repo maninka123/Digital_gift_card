@@ -33,7 +33,7 @@ jobs:
           cp index.html _site/
           cp styles.css _site/
           cp script.js _site/
-          cp social-preview.png _site/
+          cp social-preview-v2.png _site/
           cp .nojekyll _site/
           cp -r Images _site/
 

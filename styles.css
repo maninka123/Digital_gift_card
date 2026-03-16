@@ -302,6 +302,10 @@ h2 {
   background: rgba(111, 135, 108, 0.28);
 }
 
+.note-card-wide {
+  grid-column: 1 / -1;
+}
+
 .note-label {
   margin: 0 0 1rem;
   color: var(--rose-deep);

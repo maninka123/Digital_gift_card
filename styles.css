@@ -223,7 +223,7 @@ h2 {
 
 .photo-stack {
   position: relative;
-  min-height: 335px;
+  min-height: 380px;
   display: block;
   padding: 0.4rem 0.1rem 2rem 0.3rem;
 }
@@ -235,7 +235,7 @@ h2 {
   border-radius: 24px;
   border: 1px solid rgba(70, 48, 42, 0.14);
   box-shadow: 0 22px 50px var(--shadow);
-  padding: 0.62rem 0.62rem 0.82rem;
+  padding: 0.4rem 0.4rem 0.45rem;
 }
 
 .photo-frame img {
@@ -248,17 +248,17 @@ h2 {
 .photo-frame-large {
   top: 0.8rem;
   left: 0.8rem;
-  width: min(315px, 70%);
-  height: 180px;
+  width: min(350px, 76%);
+  height: 205px;
   transform: rotate(-2.2deg);
   z-index: 3;
 }
 
 .photo-frame-wide {
-  top: 8.5rem;
+  top: 9.6rem;
   right: 0.8rem;
-  width: min(315px, 70%);
-  height: 180px;
+  width: min(350px, 76%);
+  height: 205px;
   transform: rotate(2deg);
   z-index: 2;
 }
@@ -679,7 +679,7 @@ h2 {
   }
 
   .photo-stack {
-    min-height: 430px;
+    min-height: 470px;
     padding: 0.3rem 0 1.4rem;
   }
 
@@ -693,9 +693,9 @@ h2 {
 
   .photo-frame-wide {
     right: 0.1rem;
-    top: 8.8rem;
-    width: min(84%, 280px);
-    height: 160px;
+    top: 10rem;
+    width: min(88%, 300px);
+    height: 180px;
     transform: rotate(2deg);
   }
 

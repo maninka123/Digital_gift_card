@@ -4,7 +4,7 @@ This is a static farewell card for Yaling Xu. It is ready to open locally and re
 
 ## Preview
 
-![Farewell card preview](./Images/Sample_Image_github.jpeg)
+![Farewell card preview](./Images/Sample_Image_github_v2.jpeg)
 
 ## Files
 

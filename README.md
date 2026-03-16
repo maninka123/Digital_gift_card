@@ -1,39 +1,32 @@
 # Yaling Farewell Card
 
-This is a static farewell card for Yaling Xu. It is ready to open locally and ready to publish on GitHub Pages.
+A small digital farewell card for Yaling Xu, made by friends at UNSW.
 
 ## Preview
 
 ![Farewell card preview](./Images/Sample_Image_github_v2.jpeg)
 
-## Files
-
-- `index.html`: page content
-- `styles.css`: design and layout
-- `script.js`: small reveal animation
-- `Images/`: photos used in the card
-
-## Local preview
-
-Open `index.html` in a browser.
-
-## Publish on GitHub Pages
-
-1. Create a new GitHub repository.
-2. Upload these files to the repository root.
-3. Make sure the default branch is named `main`.
-4. In GitHub, open `Settings` -> `Pages`.
-5. Under `Build and deployment`, set `Source` to `GitHub Actions`.
-6. Push to `main`.
-7. Wait for the `Deploy GitHub Pages` workflow to finish.
-8. Your card will be live at:
+## Live site
 
 `https://maninka123.github.io/Digital_gift_card/`
 
-## Suggested repo name
+## Local preview
 
-`Digital_gift_card`
+Open `index.html` in a browser, or run:
+
+```powershell
+python -m http.server 8000
+```
+
+Then open `http://localhost:8000/`
+
+## Project structure
+
+- `index.html`: page content
+- `styles.css`: layout and visual design
+- `script.js`: reveal effects and rotating memory images
+- `Images/`: photos used by the card and README preview
 
 ## Updating the messages later
 
-Edit the text in `index.html`, commit, and push again. GitHub Pages will redeploy automatically.
+Edit `index.html`, commit the change, and push to `main`. GitHub Pages will update the live site automatically.

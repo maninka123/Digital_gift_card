@@ -37,7 +37,7 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=12" />
+    <link rel="stylesheet" href="./styles.css?v=9" />
   </head>
   <body>
     <div class="page-glow page-glow-left" aria-hidden="true"></div>
@@ -51,23 +51,30 @@
     <div class="ambient-mist ambient-mist-top" aria-hidden="true"></div>
     <div class="ambient-mist ambient-mist-bottom" aria-hidden="true"></div>
 
-    <aside
-      class="soundtrack-player"
-      data-soundtrack-shell
-      data-soundtrack-url="https://music.163.com/#/song?id=185709"
-    >
+    <aside class="soundtrack-player" data-soundtrack-shell>
+      <audio
+        class="soundtrack-audio"
+        data-soundtrack
+        preload="metadata"
+        loop
+      >
+        <source
+          src="./Supporting Items/周杰倫 Jay Chou【稻香 Rice Field】-Official Music Video.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
       <button
         class="soundtrack-toggle"
         data-soundtrack-toggle
         type="button"
         aria-pressed="false"
-        aria-label="Open Rice Field on NetEase Cloud Music"
+        aria-label="Play background music"
       >
         <span class="soundtrack-toggle-shape soundtrack-toggle-play" aria-hidden="true"></span>
         <span class="soundtrack-toggle-shape soundtrack-toggle-pause" aria-hidden="true"></span>
       </button>
       <div class="soundtrack-copy">
-        <p class="soundtrack-kicker">Listen on NetEase</p>
+        <p class="soundtrack-kicker">A little soundtrack</p>
         <p class="soundtrack-title">Rice Field</p>
         <p class="soundtrack-artist">Jay Chou</p>
       </div>
@@ -265,6 +272,6 @@
       </section>
     </main>
 
-    <script src="./script.js?v=12"></script>
+    <script src="./script.js?v=9"></script>
   </body>
 </html>

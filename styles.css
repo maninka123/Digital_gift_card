@@ -366,22 +366,6 @@ img {
   animation-delay: -0.54s;
 }
 
-.soundtrack-player:hover .soundtrack-visual span {
-  animation: soundtrackPulse 1s ease-in-out infinite;
-}
-
-.soundtrack-player:hover .soundtrack-visual span:nth-child(2) {
-  animation-delay: -0.18s;
-}
-
-.soundtrack-player:hover .soundtrack-visual span:nth-child(3) {
-  animation-delay: -0.36s;
-}
-
-.soundtrack-player:hover .soundtrack-visual span:nth-child(4) {
-  animation-delay: -0.54s;
-}
-
 .soundtrack-progress {
   position: absolute;
   left: 5.35rem;
@@ -395,7 +379,7 @@ img {
 
 .soundtrack-progress span {
   display: block;
-  width: 24%;
+  width: 0;
   height: 100%;
   border-radius: inherit;
   background: linear-gradient(90deg, rgba(255, 220, 149, 0.8), rgba(255, 213, 109, 1));

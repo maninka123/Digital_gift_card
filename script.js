@@ -5,6 +5,7 @@ const soundtrackShell = document.querySelector("[data-soundtrack-shell]");
 const soundtrackAudio = document.querySelector("[data-soundtrack]");
 const soundtrackToggle = document.querySelector("[data-soundtrack-toggle]");
 const soundtrackProgress = document.querySelector("[data-soundtrack-progress]");
+const soundtrackUrl = soundtrackShell?.dataset.soundtrackUrl || "";
 let filmIndex = 0;
 let soundtrackAnimationFrame = null;
 
@@ -159,6 +160,9 @@ function syncSoundtrackUi() {
 
 async function toggleSoundtrackPlayback() {
   if (!soundtrackAudio) {
+    if (soundtrackUrl) {
+      window.open(soundtrackUrl, "_blank", "noopener,noreferrer");
+    }
     return;
   }
 

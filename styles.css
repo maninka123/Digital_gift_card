@@ -213,8 +213,10 @@ h2 {
   background: rgba(255, 248, 240, 0.92);
   border: 1px solid rgba(94, 65, 58, 0.16);
   color: var(--ink);
-  font-size: 0.9rem;
+  font-family: "Fraunces", serif;
+  font-size: 0.95rem;
   font-weight: 600;
+  letter-spacing: 0.01em;
   box-shadow: 0 14px 28px rgba(53, 28, 23, 0.1);
 }
 

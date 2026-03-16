@@ -137,13 +137,14 @@ img {
 .hero,
 .closing {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 0.96fr 1.04fr;
   gap: clamp(1.5rem, 3vw, 3rem);
-  align-items: center;
+  align-items: start;
 }
 
 .hero {
   padding: clamp(1rem, 3vw, 2rem);
+  padding-bottom: 0.4rem;
 }
 
 .hero-copy {
@@ -222,10 +223,9 @@ h2 {
 
 .photo-stack {
   position: relative;
-  min-height: 540px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 385px;
+  display: block;
+  padding: 0.3rem 0.1rem 2rem 0.4rem;
 }
 
 .photo-frame {
@@ -235,58 +235,64 @@ h2 {
   border-radius: 24px;
   border: 1px solid rgba(70, 48, 42, 0.14);
   box-shadow: 0 22px 50px var(--shadow);
-  padding: 0.75rem 0.75rem 3rem;
+  padding: 0.62rem 0.62rem 0.82rem;
 }
 
 .photo-frame img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 16px;
 }
 
 .photo-frame-large {
-  top: 0;
-  right: 1rem;
-  width: min(430px, 82%);
-  height: 320px;
-  transform: rotate(3deg);
+  top: 0.4rem;
+  left: 1.1rem;
+  width: min(330px, 74%);
+  height: 190px;
+  transform: rotate(-2deg);
+  z-index: 3;
 }
 
-.photo-frame-small {
-  left: 0;
-  bottom: 1.75rem;
-  width: min(360px, 76%);
-  height: 260px;
-  transform: rotate(-4deg);
+.photo-frame-wide {
+  top: 11.4rem;
+  right: 0.2rem;
+  width: min(295px, 66%);
+  height: 182px;
+  transform: rotate(2deg);
+  z-index: 2;
 }
 
 .photo-frame-large,
-.photo-frame-small {
+.photo-frame-wide {
   animation: photoFloat 7s ease-in-out infinite;
 }
 
-.photo-frame-small {
-  animation-delay: -2.5s;
+.photo-frame-wide {
+  animation-delay: -3.2s;
 }
 
 .postmark {
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: -0.2rem;
+  bottom: 0.4rem;
   width: 160px;
   height: 160px;
   display: grid;
   place-items: center;
-  border: 2px dashed rgba(135, 56, 56, 0.5);
+  border: 3px dashed rgba(135, 56, 56, 0.72);
   border-radius: 50%;
-  color: rgba(135, 56, 56, 0.92);
-  background: radial-gradient(circle, rgba(255, 246, 239, 0.5) 0%, rgba(255, 246, 239, 0.08) 62%, transparent 100%);
-  box-shadow: inset 0 0 0 1px rgba(135, 56, 56, 0.08);
-  font-size: 0.82rem;
+  color: rgba(126, 43, 43, 0.96);
+  background: radial-gradient(circle, rgba(255, 244, 236, 0.78) 0%, rgba(255, 244, 236, 0.18) 60%, transparent 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(135, 56, 56, 0.12),
+    0 10px 24px rgba(135, 56, 56, 0.08);
+  font-size: 0.92rem;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   transform: rotate(-12deg);
+  z-index: 6;
 }
 
 .postmark span:first-child {
@@ -300,18 +306,18 @@ h2 {
 .postmark-seal {
   display: grid;
   place-items: center;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.8rem;
+  height: 2.8rem;
   border-radius: 50%;
-  font-size: 1rem;
+  font-size: 1.15rem;
   letter-spacing: normal;
-  background: rgba(135, 56, 56, 0.1);
-  border: 1px solid rgba(135, 56, 56, 0.18);
+  background: rgba(135, 56, 56, 0.14);
+  border: 1px solid rgba(135, 56, 56, 0.24);
   transform: none !important;
 }
 
 .memory-strip {
-  margin: 1rem clamp(1rem, 3vw, 2rem) 0;
+  margin: -0.6rem clamp(1rem, 3vw, 2rem) 0;
   padding: 1.2rem 1.5rem;
   border-radius: 22px;
   background: linear-gradient(90deg, rgba(184, 87, 86, 0.16), rgba(191, 127, 47, 0.14));
@@ -386,6 +392,17 @@ h2 {
   transform: scale(1);
 }
 
+.film-empty {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 1rem;
+  color: var(--muted);
+  font-family: "Fraunces", serif;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
 .film-dots {
   position: absolute;
   right: 0.7rem;
@@ -452,13 +469,22 @@ h2 {
   background:
     linear-gradient(180deg, rgba(255, 251, 245, 0.96), rgba(239, 223, 206, 0.98)),
     var(--paper-strong);
-  border: 1px solid rgba(94, 65, 58, 0.12);
+  border: 1.5px solid rgba(150, 108, 83, 0.2);
   box-shadow: 0 18px 36px rgba(53, 28, 23, 0.1);
   transition:
     transform 240ms ease,
     box-shadow 240ms ease,
     border-color 240ms ease,
     background 240ms ease;
+}
+
+.note-card::after {
+  content: "";
+  position: absolute;
+  inset: 0.6rem;
+  border-radius: 20px;
+  border: 1px solid rgba(191, 127, 47, 0.16);
+  pointer-events: none;
 }
 
 .note-card::before {
@@ -586,25 +612,25 @@ h2 {
 @keyframes photoFloat {
   0%,
   100% {
-    transform: translateY(0) rotate(3deg);
+    transform: translateY(0) rotate(-2deg);
   }
   50% {
-    transform: translateY(-8px) rotate(4deg);
+    transform: translateY(-8px) rotate(-1deg);
   }
 }
 
-@keyframes photoFloatSmall {
+@keyframes photoFloatWide {
   0%,
   100% {
-    transform: translateY(0) rotate(-4deg);
+    transform: translateY(0) rotate(2deg);
   }
   50% {
-    transform: translateY(-8px) rotate(-5deg);
+    transform: translateY(-8px) rotate(3deg);
   }
 }
 
-.photo-frame-small {
-  animation-name: photoFloatSmall;
+.photo-frame-wide {
+  animation-name: photoFloatWide;
 }
 
 @media (max-width: 920px) {
@@ -615,18 +641,19 @@ h2 {
   }
 
   .photo-stack {
-    min-height: 500px;
+    min-height: 385px;
     margin-top: 1rem;
-  }
-
-  .photo-frame-large {
-    right: 0.5rem;
+    padding: 0.3rem 0 1.8rem;
   }
 
   .postmark {
     width: 132px;
     height: 132px;
     font-size: 0.68rem;
+  }
+
+  .memory-strip {
+    margin-top: 0.6rem;
   }
 
   .film-strip {
@@ -651,19 +678,32 @@ h2 {
   }
 
   .photo-stack {
-    min-height: 420px;
+    min-height: 430px;
+    padding: 0.3rem 0 1.4rem;
   }
 
   .photo-frame-large {
-    width: min(100%, 320px);
-    height: 220px;
-    right: 0;
+    left: 0.6rem;
+    top: 0.4rem;
+    width: min(88%, 300px);
+    height: 180px;
+    transform: rotate(-2deg);
   }
 
-  .photo-frame-small {
-    left: 0.5rem;
-    width: min(88%, 280px);
-    height: 200px;
+  .photo-frame-wide {
+    right: 0.1rem;
+    top: 10.8rem;
+    width: min(82%, 275px);
+    height: 165px;
+    transform: rotate(2deg);
+  }
+
+  .postmark {
+    right: 0;
+    bottom: -0.2rem;
+    width: 148px;
+    height: 148px;
+    font-size: 0.72rem;
   }
 
   .hero-tags span {

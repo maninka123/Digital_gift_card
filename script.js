@@ -1,7 +1,12 @@
 const revealItems = document.querySelectorAll("[data-reveal]");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const memoryRotator = document.querySelector("[data-memory-rotator]");
+const soundtrackShell = document.querySelector("[data-soundtrack-shell]");
+const soundtrackAudio = document.querySelector("[data-soundtrack]");
+const soundtrackToggle = document.querySelector("[data-soundtrack-toggle]");
+const soundtrackProgress = document.querySelector("[data-soundtrack-progress]");
 let filmIndex = 0;
+let soundtrackAnimationFrame = null;
 
 revealItems.forEach((item, index) => {
   item.style.transitionDelay = `${index * 80}ms`;
@@ -104,3 +109,81 @@ async function buildMemoryRotator() {
 }
 
 buildMemoryRotator();
+
+function updateSoundtrackProgress() {
+  if (!soundtrackAudio || !soundtrackProgress) {
+    return;
+  }
+
+  const progressValue =
+    soundtrackAudio.duration > 0
+      ? (soundtrackAudio.currentTime / soundtrackAudio.duration) * 100
+      : 0;
+
+  soundtrackProgress.style.width = `${progressValue}%`;
+
+  if (!soundtrackAudio.paused) {
+    soundtrackAnimationFrame = window.requestAnimationFrame(updateSoundtrackProgress);
+  }
+}
+
+function stopSoundtrackProgressLoop() {
+  if (soundtrackAnimationFrame !== null) {
+    window.cancelAnimationFrame(soundtrackAnimationFrame);
+    soundtrackAnimationFrame = null;
+  }
+}
+
+function syncSoundtrackUi() {
+  if (!soundtrackShell || !soundtrackToggle || !soundtrackAudio) {
+    return;
+  }
+
+  const isPlaying = !soundtrackAudio.paused;
+
+  soundtrackShell.classList.toggle("is-playing", isPlaying);
+  soundtrackToggle.setAttribute("aria-pressed", String(isPlaying));
+  soundtrackToggle.setAttribute(
+    "aria-label",
+    isPlaying ? "Pause background music" : "Play background music"
+  );
+
+  stopSoundtrackProgressLoop();
+
+  if (isPlaying) {
+    updateSoundtrackProgress();
+  } else if (soundtrackProgress) {
+    updateSoundtrackProgress();
+  }
+}
+
+async function toggleSoundtrackPlayback() {
+  if (!soundtrackAudio) {
+    return;
+  }
+
+  if (soundtrackAudio.paused) {
+    try {
+      await soundtrackAudio.play();
+    } catch (error) {
+      console.error("Background music could not start.", error);
+    }
+  } else {
+    soundtrackAudio.pause();
+  }
+}
+
+if (soundtrackAudio) {
+  soundtrackAudio.volume = 0.42;
+
+  soundtrackAudio.addEventListener("play", syncSoundtrackUi);
+  soundtrackAudio.addEventListener("pause", syncSoundtrackUi);
+  soundtrackAudio.addEventListener("ended", syncSoundtrackUi);
+  soundtrackAudio.addEventListener("loadedmetadata", updateSoundtrackProgress);
+}
+
+if (soundtrackToggle) {
+  soundtrackToggle.addEventListener("click", toggleSoundtrackPlayback);
+}
+
+syncSoundtrackUi();

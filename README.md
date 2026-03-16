@@ -2,6 +2,10 @@
 
 This is a static farewell card for Yaling Xu. It is ready to open locally and ready to publish on GitHub Pages.
 
+## Preview
+
+![Farewell card preview](./Images/Sample_Image_github.jpeg)
+
 ## Files
 
 - `index.html`: page content

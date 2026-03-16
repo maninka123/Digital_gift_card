@@ -36,6 +36,38 @@ img {
   width: 100%;
 }
 
+.floating-decor {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  font-family: "Fraunces", serif;
+  animation: drift 8s ease-in-out infinite;
+}
+
+.floating-decor-star {
+  top: 12%;
+  left: 6%;
+  color: rgba(184, 87, 86, 0.55);
+  font-size: 2rem;
+}
+
+.floating-decor-heart {
+  top: 28%;
+  right: 8%;
+  color: rgba(191, 127, 47, 0.48);
+  font-size: 2.2rem;
+  animation-delay: -2s;
+}
+
+.floating-decor-spark {
+  bottom: 16%;
+  left: 10%;
+  color: rgba(111, 135, 108, 0.5);
+  font-size: 1.7rem;
+  animation-delay: -4s;
+}
+
 .page-glow {
   position: fixed;
   width: 24rem;
@@ -116,6 +148,16 @@ img {
 
 .hero-copy {
   max-width: 34rem;
+}
+
+.handwritten-note {
+  margin: 0.9rem 0 0;
+  color: var(--rose-deep);
+  font-family: "Caveat", cursive;
+  font-size: clamp(1.4rem, 2.3vw, 2rem);
+  line-height: 1;
+  transform: rotate(-2deg);
+  opacity: 0.9;
 }
 
 .eyebrow {
@@ -216,6 +258,15 @@ h2 {
   transform: rotate(-4deg);
 }
 
+.photo-frame-large,
+.photo-frame-small {
+  animation: photoFloat 7s ease-in-out infinite;
+}
+
+.photo-frame-small {
+  animation-delay: -2.5s;
+}
+
 .postmark {
   position: absolute;
   right: 0;
@@ -224,22 +275,37 @@ h2 {
   height: 160px;
   display: grid;
   place-items: center;
-  border: 2px dashed rgba(155, 70, 70, 0.36);
+  border: 2px dashed rgba(135, 56, 56, 0.5);
   border-radius: 50%;
-  color: rgba(135, 56, 56, 0.84);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  color: rgba(135, 56, 56, 0.92);
+  background: radial-gradient(circle, rgba(255, 246, 239, 0.5) 0%, rgba(255, 246, 239, 0.08) 62%, transparent 100%);
+  box-shadow: inset 0 0 0 1px rgba(135, 56, 56, 0.08);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   transform: rotate(-12deg);
 }
 
 .postmark span:first-child {
-  transform: translateY(0.4rem);
+  transform: translateY(0.55rem);
 }
 
 .postmark span:last-child {
-  transform: translateY(-0.4rem);
+  transform: translateY(-0.55rem);
+}
+
+.postmark-seal {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  letter-spacing: normal;
+  background: rgba(135, 56, 56, 0.1);
+  border: 1px solid rgba(135, 56, 56, 0.18);
+  transform: none !important;
 }
 
 .memory-strip {
@@ -253,8 +319,109 @@ h2 {
 .memory-strip p {
   margin: 0;
   text-align: center;
-  color: var(--ink);
-  font-weight: 600;
+  color: var(--rose-deep);
+  font-family: "Caveat", cursive;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.mini-memory {
+  padding: 0 2rem 0.5rem;
+}
+
+.film-card {
+  padding: 1rem;
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(255, 249, 241, 0.92), rgba(239, 223, 206, 0.95));
+  border: 1px solid rgba(94, 65, 58, 0.12);
+  box-shadow: 0 16px 34px rgba(53, 28, 23, 0.08);
+}
+
+.film-label {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+}
+
+.film-strip {
+  display: grid;
+  grid-template-columns: minmax(0, 2.25fr) minmax(240px, 0.75fr);
+  gap: 0.8rem;
+  align-items: stretch;
+}
+
+.film-rotator {
+  position: relative;
+  min-height: 320px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(94, 65, 58, 0.1);
+  background: rgba(255, 252, 247, 0.9);
+}
+
+.film-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: linear-gradient(180deg, rgba(244, 231, 217, 0.9), rgba(236, 216, 196, 0.92));
+  opacity: 0;
+  transform: scale(1.02);
+  transition:
+    opacity 700ms ease,
+    transform 1200ms ease;
+}
+
+.film-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.film-dots {
+  position: absolute;
+  right: 0.7rem;
+  bottom: 0.7rem;
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.3rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(31, 21, 20, 0.22);
+  backdrop-filter: blur(8px);
+}
+
+.film-dot {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: rgba(255, 247, 239, 0.48);
+}
+
+.film-dot.is-active {
+  background: rgba(255, 247, 239, 0.96);
+}
+
+.film-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  min-width: 240px;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  color: var(--muted);
+  background: rgba(255, 252, 247, 0.76);
+  border: 1px dashed rgba(184, 87, 86, 0.24);
+  font-family: "Fraunces", serif;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  text-align: center;
 }
 
 .messages {
@@ -285,6 +452,11 @@ h2 {
     var(--paper-strong);
   border: 1px solid rgba(94, 65, 58, 0.12);
   box-shadow: 0 18px 36px rgba(53, 28, 23, 0.1);
+  transition:
+    transform 240ms ease,
+    box-shadow 240ms ease,
+    border-color 240ms ease,
+    background 240ms ease;
 }
 
 .note-card::before {
@@ -307,6 +479,15 @@ h2 {
   width: 100%;
 }
 
+.note-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 26px 48px rgba(53, 28, 23, 0.16);
+  border-color: rgba(184, 87, 86, 0.22);
+  background:
+    linear-gradient(180deg, rgba(255, 251, 245, 0.98), rgba(243, 229, 214, 1)),
+    var(--paper-strong);
+}
+
 .note-label {
   margin: 0 0 1rem;
   color: var(--rose-deep);
@@ -320,11 +501,23 @@ h2 {
   margin: 0;
 }
 
+.note-card p + p {
+  margin-top: 1rem;
+}
+
+.note-card p:not(.note-label):not(.signature) {
+  font-family: "Caveat", cursive;
+  font-size: 1.75rem;
+  line-height: 1.38;
+  color: #4d3b37;
+}
+
 .signature {
   margin-top: 1.3rem !important;
   color: var(--ink) !important;
-  font-family: "Fraunces", serif;
-  font-size: 1.35rem !important;
+  font-family: "Caveat", cursive;
+  font-size: 2rem !important;
+  line-height: 1 !important;
 }
 
 .closing {
@@ -340,8 +533,29 @@ h2 {
 .closing-line {
   margin: 0;
   max-width: 24rem;
-  color: var(--ink);
-  font-weight: 600;
+  color: var(--rose-deep);
+  font-family: "Caveat", cursive;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.footer-ribbon {
+  margin: 0 clamp(1rem, 3vw, 2rem) 1.2rem;
+  padding: 1rem 1.25rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(184, 87, 86, 0.14), rgba(191, 127, 47, 0.16), rgba(111, 135, 108, 0.14));
+  border: 1px solid rgba(94, 65, 58, 0.12);
+  text-align: center;
+}
+
+.footer-ribbon p {
+  margin: 0;
+  color: var(--rose-deep);
+  font-family: "Caveat", cursive;
+  font-size: clamp(1.45rem, 2.1vw, 1.9rem);
+  line-height: 1.1;
+  font-weight: 700;
 }
 
 [data-reveal] {
@@ -355,6 +569,40 @@ h2 {
 [data-reveal].is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes photoFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(3deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(4deg);
+  }
+}
+
+@keyframes photoFloatSmall {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-5deg);
+  }
+}
+
+.photo-frame-small {
+  animation-name: photoFloatSmall;
 }
 
 @media (max-width: 920px) {
@@ -377,6 +625,15 @@ h2 {
     width: 132px;
     height: 132px;
     font-size: 0.68rem;
+  }
+
+  .film-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .film-caption {
+    min-width: 0;
+    min-height: 88px;
   }
 }
 
@@ -419,11 +676,29 @@ h2 {
     right: 0.2rem;
     bottom: 0.3rem;
   }
+
+  .mini-memory {
+    padding: 0 1rem 0.5rem;
+  }
+
+  .footer-ribbon {
+    border-radius: 26px;
+  }
+
+  .film-rotator {
+    min-height: 220px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .floating-decor,
+  .photo-frame-large,
+  .photo-frame-small {
+    animation: none;
   }
 
   [data-reveal] {

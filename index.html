@@ -33,7 +33,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css?v=2" />
@@ -41,21 +41,25 @@
   <body>
     <div class="page-glow page-glow-left" aria-hidden="true"></div>
     <div class="page-glow page-glow-right" aria-hidden="true"></div>
+    <div class="floating-decor floating-decor-star" aria-hidden="true">✦</div>
+    <div class="floating-decor floating-decor-heart" aria-hidden="true">♡</div>
+    <div class="floating-decor floating-decor-spark" aria-hidden="true">✧</div>
 
     <main class="card-shell">
       <section class="hero" data-reveal>
         <div class="hero-copy">
           <p class="eyebrow">A small UNSW farewell card</p>
           <h1>For Yaling Xu</h1>
+          <p class="handwritten-note">We will miss your smile here.</p>
           <p class="lede">
             One year, many good memories, and a friendship that deserves more
             than a quick goodbye.
           </p>
 
           <div class="hero-tags">
-            <span>UNSW Friends 💛</span>
-            <span>One Special Year 🌏</span>
-            <span>Memories to Keep 📸</span>
+            <span>UNSW Friends &#128155;</span>
+            <span>One Special Year &#127759;</span>
+            <span>Memories to Keep &#128248;</span>
           </div>
         </div>
 
@@ -68,6 +72,7 @@
           </figure>
           <div class="postmark" aria-hidden="true">
             <span>FROM UNSW</span>
+            <span class="postmark-seal">&#10084;</span>
             <span>WITH LOVE</span>
           </div>
         </aside>
@@ -76,9 +81,46 @@
       <section class="memory-strip" data-reveal>
         <p>
           Yaling, thank you for being such a lovely part of our time at UNSW
-          💛 Your kindness, your smile, and all the little moments we shared
-          ✨ made this year more special for us 🌷
+          &#128155; Your kindness, your smile, and all the little moments we shared
+          &#10024; made this year more special for us &#127799;
         </p>
+      </section>
+
+      <section class="mini-memory" data-reveal aria-label="A few small snapshots">
+        <div class="film-card">
+          <span class="film-label">A year to remember</span>
+          <div class="film-strip">
+            <div class="film-rotator">
+              <img
+                class="film-slide is-active"
+                src="./Images/Image_1.jpeg"
+                alt="Memory snapshot with Yaling and friends."
+              />
+              <img
+                class="film-slide"
+                src="./Images/Image_2.jpeg"
+                alt="Group photo with Yaling at UNSW."
+              />
+              <img
+                class="film-slide"
+                src="./Images/Image_3.jpeg"
+                alt="Team memory with Yaling around a table."
+              />
+              <img
+                class="film-slide"
+                src="./Images/Image_4.jpeg"
+                alt="Outdoor group memory with Yaling and friends."
+              />
+              <div class="film-dots" aria-hidden="true">
+                <span class="film-dot is-active"></span>
+                <span class="film-dot"></span>
+                <span class="film-dot"></span>
+                <span class="film-dot"></span>
+              </div>
+            </div>
+            <div class="film-caption">little moments, good people, lasting memories</div>
+          </div>
+        </div>
       </section>
 
       <section class="messages" aria-labelledby="messages-title">
@@ -89,29 +131,30 @@
 
         <div class="message-grid">
           <article class="note-card" data-reveal>
-            <p class="note-label">From Pasindu</p>
+            <p class="note-label">From Pasindu ✈️</p>
             <p>
               Dear Yaling,<br />
-              it was really lovely meeting you. I feel a little sad to see you
+              it was really great meeting you. I feel a little sad to see you
               leaving this week. I truly enjoyed our conversations and the
-              moments we shared at different events. I also want to thank you
-              for helping me when I was planning my first trip to China. At that
+              moments we shared at different events. It was always nice talking
+              with you and getting to know you better. It was also very kind of
+              you to help me when I was planning my first trip to China. At that
               time I was not very sure about going, but after the trip I enjoyed
-              it so much and now I feel like I want to visit China again
-              someday.
+              it very much and now I feel like I want to visit China again
+              someday &#9992;&#65039; &#127759;
             </p>
             <p>
               Even though there was sometimes a small language difference, it
               was always nice talking with you. I wish you all the very best for
               the future, and I hope everything goes well for you. Maybe one day
               we will meet again, perhaps in Beijing or somewhere else in China
-              when I visit again.
+              if I visit again &#128522;
             </p>
             <p class="signature">Pasindu</p>
           </article>
 
           <article class="note-card note-card-accent" data-reveal>
-            <p class="note-label">From Dibyayan</p>
+            <p class="note-label">From Dibyayan ✨</p>
             <p>
               Dear Yaling,
             </p>
@@ -122,20 +165,20 @@
               were always a lot of fun, especially the year-end parties where
               everyone got to know each other a bit more and the atmosphere was
               just great. It made those moments even better having someone easy
-              to talk to and laugh with along the way.
+              to talk to and laugh with along the way &#10024;
             </p>
             <p>
               Thanks for all the conversations, the laughs, and the good
               company throughout the year. It would not have been the same
               without you around. I hope the next part of your journey brings
               you plenty of success, great people to share it with, and lots of
-              reasons to smile.
+              reasons to smile &#128522;
             </p>
             <p class="signature">Dibyayan</p>
           </article>
 
           <article class="note-card note-card-wide" data-reveal>
-            <p class="note-label">From Simit</p>
+            <p class="note-label">From Simit 🌿</p>
             <p>
               Dear Yaling,
             </p>
@@ -162,6 +205,10 @@
         <p class="closing-line">
           You will always have friends at UNSW cheering for you.
         </p>
+      </section>
+
+      <section class="footer-ribbon" data-reveal>
+        <p>With love from your UNSW friends, until we meet again &#129293;</p>
       </section>
     </main>
 
